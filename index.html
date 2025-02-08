@@ -224,14 +224,14 @@
       scaffolding.setAccentColor("#ff4c4c");
 
       try {
-        scaffolding.addCloudProvider(new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "p4-@Update Bangun Datar_7.sb3"));
+        scaffolding.addCloudProvider(new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "p4-@Update Bangun Datar_final.sb3"));
       } catch (error) {
         console.error(error);
       }
 
       vm.setTurboMode(false);
       if (vm.setInterpolation) vm.setInterpolation(false);
-      if (vm.setFramerate) vm.setFramerate(40);
+      if (vm.setFramerate) vm.setFramerate(30);
       if (vm.renderer.setUseHighQualityRender) vm.renderer.setUseHighQualityRender(false);
       if (vm.setRuntimeOptions) vm.setRuntimeOptions({
         fencing: true,
@@ -288,7 +288,7 @@
         };
         xhr.onerror = () => {
           if (location.protocol === 'file:') {
-            reject(new Error('Zip environment must be used from a website, not from a file URL.'));
+            reject(new Error('Zip environment must be used on a website, not on a local file. To fix this error, use the "Plain HTML" environment instead.'));
           } else {
             reject(new Error('Request to load project data failed.'));
           }
